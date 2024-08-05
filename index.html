@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Cancer Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Thyroid Cancer Prediction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="input">Input Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="result">Prediction Result</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data_visualization">Data Visualization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.thyroid.org/">Learn More</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Thyroid Cancer Prediction</h1>
+                <p class="lead">Accurate predictions using advanced machine learning algorithms.</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About Thyroid Cancer</h2>
+                    <p>Thyroid cancer develops from the tissues of the thyroid gland, a small butterfly-shaped gland located in the front of your neck. It plays a crucial role in regulating numerous metabolic processes in the body.</p>
+                    <p>Explore more about thyroid cancer on <a href="https://www.cancer.gov/types/thyroid/patient/thyroid-treatment-pdq">Cancer.gov</a>.</p>
+                    <h3>Types of Thyroid Cancer</h3>
+                    <ul>
+                        <li><strong>Papillary Thyroid Cancer:</strong> The most common type, accounting for about 80% of cases.</li>
+                        <li><strong>Follicular Thyroid Cancer:</strong> Accounts for about 10% of cases.</li>
+                        <li><strong>Medullary Thyroid Cancer:</strong> Develops from C cells in the thyroid.</li>
+                        <li><strong>Anaplastic Thyroid Cancer:</strong> A rare, aggressive type.</li>
+                    </ul>
+                    <h3>Symptoms</h3>
+                    <ul>
+                        <li>A lump or swelling in the neck (goiter)</li>
+                        <li>Persistent hoarseness or voice changes</li>
+                        <li>Difficulty swallowing or breathing</li>
+                        <li>Persistent cough not related to a cold</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='image1.jpg') }}" alt="Thyroid Image" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+        
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto text-center">
+                        <h2>Why Choose Us?</h2>
+                        <p class="lead">Our team of experts provides personalized predictions and recommendations based on the latest research in thyroid cancer.</p>
+                        <a href="input.html" class="btn btn-primary btn-lg">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto text-center">
+                        <h2>Latest Research</h2>
+                        <p>Stay updated with the latest advancements in thyroid cancer research and treatment.</p>
+                        <a href="https://www.thyroid.org/professionals/ata-publications" class="btn btn-outline-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="text-muted text-center">
+        <div class="container">
+            <p>&copy; 2024 Thyroid Cancer Prediction Project</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

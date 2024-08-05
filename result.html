@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Thyroid Cancer Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .large-graph {
+            width: 100%;
+            height: auto;
+            max-width: 1000px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Thyroid Cancer Prediction</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/input">Input Data</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/result">Prediction Result</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/data_visualization">Data Visualization</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="display-4">Prediction Result</h1>
+                <p class="lead">View the prediction result for thyroid cancer based on your input data.</p>
+            </div>
+        </section>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Prediction Details</h2>
+                    <p>Based on the data you entered, here is the prediction result:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Prediction:</strong> {{ prediction }}</li>
+                    </ul>
+                    {% if prediction == 'Malignant' %}
+                        <p class="mt-3 alert alert-danger">The prediction indicates a high likelihood of thyroid cancer (malignant). Please consult with a medical professional for further diagnosis and treatment options.</p>
+                    {% elif prediction == 'Benign' %}
+                        <p class="mt-3 alert alert-success">The prediction indicates a low likelihood of thyroid cancer (benign). However, it is advisable to consult with a medical professional for confirmation and further health monitoring.</p>
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <h2>Visual Representation</h2>
+                    <p>Below is a visual representation of your data and the prediction:</p>
+                    <img src="{{ url_for('static', filename='user_input.png') }}" alt="Prediction Result Image" class="img-fluid large-graph rounded shadow">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h2>Understanding Your Results</h2>
+                    <p class="lead">If you have any questions about your results, please refer to the <a href="https://www.thyroid.org/">American Thyroid Association</a> or consult with your healthcare provider.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="text-muted text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 Thyroid Cancer Prediction Project. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
